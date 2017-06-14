@@ -14,7 +14,7 @@ set sudo id [bot.lua] (line 4)
 
 ./launch.sh install
 
-./launch.sh ID [1,2,3,4....]
+./launch.sh (1,2,3,....)
 
 phone and Telegram code
 
