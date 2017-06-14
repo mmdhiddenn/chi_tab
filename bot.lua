@@ -6,7 +6,7 @@ ADMIN =   109035230--yourid
 function ok_cb(extra, success, result)
 end
 
-function is_Naji(id)
+function is_Mmd(id)
 	if ((id == ADMIN) or redis:sismember("selfbotBOT-IDadmins",id)) then
 		return true
 	else
@@ -149,7 +149,7 @@ function on_msg_receive (msg)
 		if redis:get("selfbotBOT-IDlink") then
 			find_link(text)
 		end
-		if is_Naji(msg.from.id) then
+		if is_Mmd(msg.from.id) then
 			find_link(text)
 			if text:match("^(!setphoto)$") and msg.reply_id then
 				load_photo(msg.reply_id, set_bot_photo, receiver)
