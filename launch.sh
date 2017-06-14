@@ -43,7 +43,7 @@ autolaunch() {
 			TMUX= tmux new-session -d -s Fbot-"$num" "bash launch.sh $num"
 			tmux detach -s Fbot-"$num"
 		done
-		echo -e " \n\e[1;32mربات ها راه اندازی شدند << \e[1;34m| Naji |\e[1;32m>> Bots are Running\n\e[0;39;49m"
+		echo -e " \n\e[1;32mربات ها راه اندازی شدند << \e[1;34m| Mmdhiddenn |\e[1;32m>> Bots are Running\n\e[0;39;49m"
 		sleep 1200
 	done 
 }
