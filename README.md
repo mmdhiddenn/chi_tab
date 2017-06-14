@@ -10,11 +10,13 @@ chmod +x launch.sh
 
 chmod +x steady.sh
 
+set sudo id [bot.lua] (line 4)
+
 ./launch.sh install
 
+./launch.sh ID [1,2,3,4....]
 
-
-
+phone and Telegram code
 
 
 
