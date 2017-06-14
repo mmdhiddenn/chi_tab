@@ -320,7 +320,7 @@ function on_msg_receive (msg)
 				local sgps = redis:scard("selfbotBOT-IDsupergroups")
 				local links = redis:scard("selfbotBOT-IDlinks")
 				local con = redis:get("selfbotBOT-IDcontacts") or "مشخص نشده"
-				local text = "<b>⛱ Users </b>: "..usrs.."\n<b>🏖 Groups </b>: "..gps.."\n<b>🏝 SuperGroups </b>: "..sgps.."\n<b>☔️ Total Saved Links </b>: "..links.."\n<b>💦 Total Saved Contacts </b>: "\..con
+				local text = "<b>👤 Users </b>: "..usrs.."\n<b>👥 Groups </b>: "..gps.."\n<b>🌐 SuperGroups </b>: "..sgps.."\n<b>📁 Total Saved Links </b>: "..links.."\n<b>💠 Total Saved Contacts </b>: "..con
 				send_msg(receiver, text, ok_cb, false)
 			elseif text:match("^(!bc)(.*) (.*)") then
 				local matches = {text:match("^!bc(.*) (.*)$")} 
