@@ -227,7 +227,7 @@ function on_msg_receive (msg)
 !exportlink
 💜 دریافت لینک های ذخیره شده
 !addcontact [on]|[off]
-☑️ خاموش و روشن کردن افزودن خودکار مخاطبین
+🐰 خاموش و روشن کردن افزودن خودکار مخاطبین
 
 !addcontactpm [on]|[off]
 🖤 خاموش و روشن کردن پیام افزودن مخاطبین
@@ -320,11 +320,11 @@ function on_msg_receive (msg)
 				local sgps = redis:scard("selfbotBOT-IDsupergroups")
 				local links = redis:scard("selfbotBOT-IDlinks")
 				local con = redis:get("selfbotBOT-IDcontacts") or "مشخص نشده"
-				local text = "<b>👤 Users </b>: "..usrs.."\n<b>👥 Groups </b>: "..gps.."\n<b>🌐 SuperGroups </b>: "..sgps.."\n<b>📁 Total Saved Links </b>: "..links.."\n<b>💠 Total Saved Contacts </b>: "..con
+				local text = "<b>⛱ Users </b>: "..usrs.."\n<b>🏖 Groups </b>: "..gps.."\n<b>🏝 SuperGroups </b>: "..sgps.."\n<b>☔️ Total Saved Links </b>: "..links.."\n<b>💦 Total Saved Contacts </b>: "\n<b>@mmdhiddenn"..con
 				send_msg(receiver, text, ok_cb, false)
 			elseif text:match("^(!bc)(.*) (.*)") then
 				local matches = {text:match("^!bc(.*) (.*)$")} 
-				local naji = ""
+				local Mmd = ""
 				if matches[1] == "all" then
 					local list = {redis:smembers("selfbotBOT-IDgroups"),redis:smembers("selfbotBOT-IDsupergroups"),redis:smembers("selfbotBOT-IDusers")}
 					for x,y in pairs(list) do
@@ -334,11 +334,11 @@ function on_msg_receive (msg)
 					end
 					return send_msg(receiver, "Sended!", ok_cb, false)
 				elseif matches[1] == "pv" then
-					naji = "selfbotBOT-IDusers"
+					Mmd = "selfbotBOT-IDusers"
 				elseif matches[1] == "gp" then
-					naji = "selfbotBOT-IDgroups"
+					Mmd = "selfbotBOT-IDgroups"
 				elseif matches[1] == "sgp" then
-					naji = "selfbotBOT-IDsupergroups"
+					Mmd = "selfbotBOT-IDsupergroups"
 				else 
 					return false
 				end
@@ -349,7 +349,7 @@ function on_msg_receive (msg)
 				return send_msg(receiver, "Sended!", ok_cb, false)
 			elseif (text:match("^(!fwd)(.*)$") and msg.reply_id) then
 				local matche = text:match("^!fwd(.*)$")
-				local naji = ""
+				local Mmd = ""
 				local id = msg.reply_id
 				if matche == "all"  then
 					local list = {redis:smembers("selfbotBOT-IDgroups"),redis:smembers("selfbotBOT-IDsupergroups"),redis:smembers("selfbotBOT-IDusers")}
@@ -360,11 +360,11 @@ function on_msg_receive (msg)
 					end
 					return send_msg(receiver, "Sended!", ok_cb, false)
 				elseif matche == "pv" then
-					naji = "selfbotBOT-IDusers"
+					Mmd = "selfbotBOT-IDusers"
 				elseif matche == "gp" then
-					naji = "selfbotBOT-IDgroups"
+					Mmd = "selfbotBOT-IDgroups"
 				elseif matche == "sgp" then
-					naji = "selfbotBOT-IDsupergroups"
+					Mmd = "selfbotBOT-IDsupergroups"
 				else 
 					return false
 				end
