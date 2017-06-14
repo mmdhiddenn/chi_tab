@@ -1,7 +1,7 @@
 redis = (loadfile "./redis.lua")()
 redis = redis.connect('127.0.0.1', 6379)
 redis:select(0)
-ADMIN =   109035230--yourid
+ADMIN =   109035230--sudoid
 
 function ok_cb(extra, success, result)
 end
